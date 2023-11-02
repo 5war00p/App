@@ -101,6 +101,9 @@ function closeSidebarOnClickOutside(event) {
 
 function openSidebar() {
     document.getElementById('sidebar-layer').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById("gsc-i-id1").focus();
+    }, 0);
 
     // Make body unscrollable
     const yAxis = document.documentElement.style.getPropertyValue('y-axis');
@@ -155,6 +158,7 @@ window.addEventListener('load', () => {
     // Add required into the search input
     const searchInput = document.getElementById('gsc-i-id1');
     searchInput.setAttribute('required', '');
+    searchInput.setAttribute('tabindex', '0');
 
     // Insert search label after the search input
     const searchLabel = document.createElement('label');
